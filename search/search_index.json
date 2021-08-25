@@ -1,0 +1,1 @@
+{"config":{"lang":["en"],"min_search_length":3,"prebuild_index":false,"separator":"[\\s\\-]+"},"docs":[{"location":"","text":"Title \u00b6 Text","title":"Getting Started"},{"location":"#title","text":"Text","title":"Title"},{"location":"help/","text":"Help \u00b6 Contact","title":"Help/Contact"},{"location":"help/#help","text":"Contact","title":"Help"}]}
