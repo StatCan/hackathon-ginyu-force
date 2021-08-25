@@ -12,7 +12,7 @@ check-prerequisites:
 		exit 1; \
 	fi
 
-install: install-yarn install-venv
+install: install-venv
 
 install-venv: check-prerequisites
 	python3 -m venv --prompt "$$(pwd | rev | cut -d / -f 1 | rev)" .venv
