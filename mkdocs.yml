@@ -40,4 +40,4 @@ extra:
 # Page tree
 nav:
   - Getting Started: index.md
-  - Help/Contact: Help.md
+  - Help/Contact: help.md
