@@ -9,13 +9,11 @@ site_dir: site
 
 repo_name: StatCan/hackathon-ginyu-force
 repo_url: https://github.com/StatCan/hackathon-ginyu-force
-edit_uri: edit/master/docs
+edit_uri: edit/main/docs
 
 theme:
   name: material
   language: en
-  #features:
-  #  - tabs
   palette:
     primary: indigo
     accent: teal
