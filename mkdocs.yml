@@ -1,15 +1,15 @@
-site_name: COVID-19 Advanced Analytics Workspace
-site_url: https://statcan.github.io/daaas/en/
-site_description: User guide for the DAaaS Covid-19 Platform
+site_name: Website
+site_url: https://statcan.github.io/hackathon-ginyu-force
+site_description:
 copyright: Copyright &copy; 2020 Statistics Canada
 strict: true
 
-docs_dir: docs/en
-site_dir: site/en
+docs_dir: docs
+site_dir: site
 
-repo_name: StatCan/daaas
-repo_url: https://github.com/StatCan/daaas
-edit_uri: edit/master/docs/en
+repo_name: StatCan/hackathon-ginyu-force
+repo_url: https://github.com/StatCan/hackathon-ginyu-force
+edit_uri: edit/master/docs
 
 theme:
   name: material
@@ -35,33 +35,9 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/StatCan/daaas
-    - icon: fontawesome/brands/slack
-      link: https://statcan-aaw.slack.com
+      link: https://github.com/StatCan/hackathon-ginyu-force
 
 # Page tree
 nav:
   - Getting Started: index.md
-  - Analysis:
-      - Kubeflow: 1-Experiments/Kubeflow.md
-      - Jupyter: 1-Experiments/Jupyter.md
-      - RStudio: 1-Experiments/RStudio.md
-      - Remote Desktop: 1-Experiments/Remote-Desktop.md
-  - Publishing:
-      - R Shiny: 2-Publishing/R-Shiny.md
-      - Dash: 2-Publishing/Dash.md
-      - Datasette: 2-Publishing/Datasette.md
-      - Power BI: 2-Publishing/PowerBI.md
-      - Custom: 2-Publishing/Custom.md
-  - Pipelines:
-      - Kubeflow Pipelines: 3-Pipelines/Kubeflow-Pipelines.md
-      - PaaS Integration: 3-Pipelines/PaaS.md
-      - Model Serving: 3-Pipelines/Serving.md
-  - Collaboration:
-      - Overview: 4-Collaboration/Overview.md
-      - Request a Namespace: 4-Collaboration/Request-a-Namespace.md
-  - Storage:
-      - Overview: 5-Storage/Overview.md
-      - Disks: 5-Storage/Disks.md
-      - MinIO: 5-Storage/MinIO.md
   - Help/Contact: Help.md
