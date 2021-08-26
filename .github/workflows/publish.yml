@@ -17,6 +17,8 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Build
         run: |
+          # Replace vars using jinja templates
+          python3 .github/scripts/substitute.py dummy-values.json
           mkdocs build -c -f mkdocs.yml
       - name: Publish
         uses: peaceiris/actions-gh-pages@v3
