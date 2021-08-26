@@ -1,28 +1,35 @@
-<img
+<div class="row">
+  <div class="column">
+    <img
     src="content/infographic_countries.svg"
     alt="{{ estma_countries }} Countries"
     height="100"
     width="200" />
-
-<img
+  </div>
+  <div class="column">
+    <img
     src="content/infographic_estma_reports.svg"
     alt="{{ estma_reports_count }} ESTMA Reports"
     height="100"
     width="200" />
-
-
-<img
+  </div>
+  <div class="column">
+    <img
     src="content/infographic_payees.svg"
     alt="{{ estma_payees }} Unique Payees"
     height="200"
     width="300" />
-
-
-<img
+  </div>
+  <div class="column">
+  <img
     src="content/infographic_dollars.svg"
     alt="{{ estma_dollars }} Dollars in value reported"
     height="100"
     width="200" />
+  </div>
+</div>
+
+
 
 
 

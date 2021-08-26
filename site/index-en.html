@@ -93,120 +93,43 @@
 <p><strong></strong></p>
 
 <section>
-	<h2>Heading&#32;2&#32;(<code>h2</code>)</h2>
-	<section>
-		<h3>Heading&#32;3&#32;(<code>h3</code>)</h3>
-		<section>
-			<h4>Heading&#32;4&#32;(<code>h4</code>)</h4>
-			<section>
-				<h5>Heading&#32;5&#32;(<code>h5</code>)</h5>
-				<section>
-					<h6>Heading&#32;6&#32;(<code>h6</code>)</h6>
-					<p>Paragraph - default appearance</p>
-				</section>
-			</section>
-		</section>
-	</section>
+	<h2>Getting Started</h2>
 </section>
-<p><a href="#">Link</a></p>
-<ul>
-	<li>unordered list&#32;(<code>ul</code>) - level&#32;1
-		<ul>
-			<li>unordered list&#32;(<code>ul</code>) - level&#32;2
-				<ul>
-					<li>unordered list&#32;(<code>ul</code>) - level&#32;3</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-<ol>
-	<li>ordered list&#32;(<code>ol</code>) - level&#32;1</li>
-	<li>ordered list&#32;(<code>ol</code>) - level&#32;1
-		<ol>
-			<li>ordered list&#32;(<code>ol</code>) - level&#32;2</li>
-			<li>ordered list&#32;(<code>ol</code>) - level&#32;2
-				<ol>
-					<li>ordered list&#32;(<code>ol</code>) - level&#32;3</li>
-					<li>ordered list&#32;(<code>ol</code>) - level&#32;3</li>
-				</ol>
-			</li>
-		</ol>
-	</li>
-</ol>
-<table class="table table-striped">
-	<caption>Table caption</caption>
-	<thead>
-		<tr>
-			<th scope="col">Table header&#32;(<code>th</code>)</th>
-			<th scope="col">Table header&#32;(<code>th</code>)</th>
-			<th scope="col">Table header&#32;(<code>th</code>)</th>
-			<th scope="col">Table header&#32;(<code>th</code>)</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-		</tr>
-		<tr>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-		</tr>
-		<tr>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-			<td>Table data&#32;(<code>td</code>)</td>
-		</tr>
-	</tbody>
-</table>
-<form method="post" action="#" class="form-horizontal">
-	<div class="form-group">
-		<label for="data1" class="col-sm-3 control-label">Form&#32;<code>input</code></label>
-		<div class="col-sm-9">
-			<input type="text" id="data1" name="data1" class="form-control" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="data2" class="col-sm-3 control-label">Form&#32;<code>textarea</code></label>
-		<div class="col-sm-9">
-			<textarea id="data2" rows="3" cols="15" name="data2" class="form-control"></textarea>
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="data4" class="col-sm-3 control-label">Form&#32;<code>select</code></label>
-		<div class="col-sm-9">
-			<select name="data4" id="data4" class="form-control">
-				<option value="1">Option&#32;1</option>
-				<option value="2">Option&#32;2</option>
-				<option value="3">Option&#32;3</option>
-				<option value="4">Option&#32;4</option>
-			</select>
-		</div>
-	</div>
-	<div class="form-group">
-		<div class="col-sm-offset-3 col-sm-9">
-			<button type="submit" class="btn btn-primary">Submit</button>
-		</div>
-	</div>
-</form>
-<blockquote>
-	<p>"<code>blockquote</code>"</p>
-	<footer><code>footer</code> <cite><code>cite</code></cite></footer>
-</blockquote>
 
-<h2 id="cnt-wdth-lmtd">Section with limited width content</h2>
-<p>Add the CSS class name <code>.cnt-wdth-lmtd</code> to a sectioning element <code>&lt;section class="cnt-wdth-lmtd"&gt;...&lt;section&gt;</code> inside the main content of your page. More guidance are provided in the Content and IA specification.</p>
-<section class="cnt-wdth-lmtd">
-	<h3>Section example with limited width content</h3>
-	<p>Different example text. Different example text. Different example text. Different example text. Different example text. Different example text. Different example text. Different example text.</p>
-</section>
-<h2 id="call-to-action">Call to action button</h2>
+<div class="row">
+	<div class="col-sm-3">
+	  <img
+	  src="content/infographic_countries.svg"
+	  alt="{{ estma_countries }} Countries"
+	  height="100"
+	  width="200" />
+	</div>
+	<div class="col-sm-3">
+	  <img
+	  src="content/infographic_estma_reports.svg"
+	  alt="{{ estma_reports_count }} ESTMA Reports"
+	  height="100"
+	  width="200" />
+	</div>
+	<div class="col-sm-3">
+	  <img
+	  src="content/infographic_payees.svg"
+	  alt="{{ estma_payees }} Unique Payees"
+	  height="200"
+	  width="300" />
+	</div>
+	<div class="col-sm-3">
+	<img
+	  src="content/infographic_dollars.svg"
+	  alt="{{ estma_dollars }} Dollars in value reported"
+	  height="100"
+	  width="200" />
+	</div>
+  </div>
+  
+  
+  
+  <h2 id="call-to-action">Explore the data</h2>
 <p>Add the CSS class name <code>.btn-call-to-action</code> to a your button or link that define the main call for action for a page. For example the initiation button/link in a service initiation pages. More guidance are provided in the Content and IA specification.</p>
 <div class="row">
 	<div class="col-sm-6">
@@ -220,6 +143,29 @@
 		<pre><code>&lt;button class="btn <strong>btn-call-to-action</strong>" type="button"&gt;[Call to action]&lt;/button&gt;</code></pre>
 	</div>
 </div>
+  <div >
+  <h1> Open data on oil, gas, and mining payments</h1>
+  <h2>  Extractive Sector Transparency Measures Act (ESTMA)</div></h2>
+  
+  The <b><a href="http://laws-lois.justice.gc.ca/eng/acts/E-22.7/page-1.html">Extractive Sector Transparency Measures Act (ESTMA)</a></b> helps the Government of Canada deter corruption in the extractive sector. Extractive entities — oil, gas, and mining businesses — that are active in Canada must publicly disclose certain types of payments made to governments in Canada and abroad. 
+  Visit <b>[Natural Resources Canada's website](https://www.nrcan.gc.ca/our-natural-resources/minerals-mining/extractive-sector-transparency-measures-act/18180)</b> to learn more about the ESTMA.
+  
+  <h2> Access ESTMA Data</div></h2>
+  
+  Explore payments to governments made by companies for extracting oil, gas and mineral resources around the globe. To encourage the analysis of the data published under ESTMA, Natural Resources Canada (NRCan) collects and publishes summary data. 
+  
+  ESTMA data are available via three platforms:
+  
+  - [Explore the data in the viewer tool](https://flatgithub.com/blairdrummond/test-flatdata?filename=SAMPLE-ESTMA-data.csv&filters=&sha=2c33af1dab6abd7e98a4274decc0d952db46a13f&sort=jurisdiction%2Casc&stickyColumnName=estma_id)
+  - Preview / download the data below
+  - [Download PDF reports from the NRCan website](https://www.nrcan.gc.ca/our-natural-resources/minerals-mining/extractive-sector-transparency-measures-act/links-estma-reports/18198)
+  
+  <h2> Data Preview</div></h2>
+  (insert iFrame here?) 
+  
+</div>
+  
+  
 
 <div class="pagedetails">
 	<div class="row">
