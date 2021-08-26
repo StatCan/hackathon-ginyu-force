@@ -52,4 +52,4 @@ if __name__ == "__main__":
         values = json.load(f)
 
     traverse(values)
-    traverse(values=values, dir='site')
+    traverse(values=values, dir='site/content')
