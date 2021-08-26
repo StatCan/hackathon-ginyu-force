@@ -1,3 +1,10 @@
+<img
+    src="content/infographic_estma_reports.svg"
+    alt="{{ estma_reports_count }} ESTMA Reports"
+    height="100"
+    width="200" />
+
+
 # Open data on oil, gas, and mining payments
 ##  Extractive Sector Transparency Measures Act (ESTMA)
 
@@ -16,4 +23,5 @@ ESTMA data are available via three platforms:
 
 ## Data Preview
 (insert iFrame here?) 
+
 
