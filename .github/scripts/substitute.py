@@ -9,6 +9,8 @@ from jinja2 import Template, FileSystemLoader, StrictUndefined
 
 jinja_env = jinja2.Environment(
     loader=FileSystemLoader('.'),
+    variable_start_string='<<',
+    variable_end_string='>>',
     undefined=StrictUndefined
 )
 
