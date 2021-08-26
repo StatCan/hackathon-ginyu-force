@@ -13,6 +13,7 @@ jinja_env = jinja2.Environment(
 )
 
 ROOT = 'docs'
+PRINT_ONLY = False
 
 def templatify(dest: str, values: Dict):
     try:
