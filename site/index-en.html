@@ -90,87 +90,125 @@
 
 <main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
 <h1 id="wb-cont" property="name">Open data on oil, gas, and mining payments</h1>
-<p><strong></strong></p>
 
-<section>
-	<h2>Getting Started</h2>
-</section>
+<div class="row" style="margin-top: 16px;">
+	<style>
+		.indicator {
+			overflow: hidden;
+			padding: 8px;
+			text-align: center;
+		}
+		.indicator img {
+			display: block;
+			float: left;
+			margin-right: 8px;
+			width: 86px;
+		}
+		.indicator p {
+			float: left;
+			width: 120px;
+		}
+		.indicator p > span:nth-child(2) {
+			display: block;
+			margin-top: 4px;
+			font-size: 48px;
+		}
+		.indicator [data-json-replacewith]:after {
+			content: "—";
+		}
+		@media (min-width: 768px) and (max-width: 1199px) {
+			.indicator img, .indicator p {
+				float: none;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.indicator p {
+				width: auto;
+			}
+		}
+		@media (max-width: 767px) {
+			.indicator {
+				text-align: left !important;
+			}
+		}
+	</style>
+	<div class="col-sm-3">
+		<div class="indicator">
+			<img src="assets/earth.svg" alt=""/>
+			<p>
+				<span>Countries<span class="wb-inv">:</span></span>
+				<span>
+					<span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force/main/summary.json#/estma_countries"></span>
+				</span>
+			</p>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="indicator">
+			<img src="assets/business.svg" alt=""/>
+			<p>
+				<span>Reports<span class="wb-inv">:</span></span>
+				<span>
+					<span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force/main/summary.json#/estma_reports_count"></span>
+				</span>
+			</p>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="indicator">
+			<img src="assets/receipt.svg" alt=""/>
+			<p>
+				<span>Payees<span class="wb-inv">:</span></span>
+				<span>
+					<span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force/main/summary.json#/estma_payees"></span>
+				</span>
+			</p>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="indicator">
+			<img src="assets/money.svg" alt=""/>
+			<p>
+				<span>Total Dollars<span class="wb-inv">:</span></span>
+				<span>
+					<span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force/main/summary.json#/estma_dollars">&nbsp;</span>
+				</span>
+			</p>
+		</div>
+	</div>
+</div>
+
 
 <div class="row">
-	<div class="col-sm-3">
-		<p>Number of Countries</p>
-	  <img
-	  src="/assets/earth.svg"
-	  alt="128 Countries"
-	  height="100"
-	  width="100" />
-	  <a data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force/main/summary.json#/estma_countries" href="#">(number of contries)</a>
-	</div>
-	<div class="col-sm-3">
-		<p>Number of reports</p>
-	  <img
-	  src="/assets/business.svg"
-	  alt="2149 ESTMA Reports"
-	  height="100"
-	  width="100" />
-	  <a data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force/main/summary.json#/estma_reports_count" href="#">(number of reports)</a>
-	</div>
-	<div class="col-sm-3">
-		<p>Number of Payees</p>
-	  <img
-	  src="/assets/receipt.svg"
-	  alt="3586 Unique Payees"
-	  height="100"
-	  width="100" />
-	  <a data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force/main/summary.json#/estma_payees" href="#">(number of payees)</a>
-	</div>
-	<div class="col-sm-3">
-		<p>Total Dollars in Value</p>
-	<img
-	  src="/assets/money.svg"
-	  alt="343.3B Dollars in value reported"
-	  height="100"
-	  width="100" />
-	  <a data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force/main/summary.json#/estma_dollars" href="#">(number of dollars)</a>
-	</div>
-  </div>
+	<div class="col-sm-12">
+		<h2>Getting Started</h2>
+		<p class="mrgn-bttm-0">
+			You can view, filter, and gain basic insights into ESTMA data directly in
+			your browser.
+		</p>
+		<a class="btn btn-call-to-action" target=”_blank” href="https://flatgithub.com/blairdrummond/test-flatdata?filename=SAMPLE-ESTMA-data.csv&filters=&sha=2c33af1dab6abd7e98a4274decc0d952db46a13f&sort=jurisdiction%2Casc&stickyColumnName=estma_id">
+			Start exploring the data
+		</a>
+		<h2>Extractive Sector Transparency Measures Act (ESTMA)</h2>
+		<p>The <strong><a href="http://laws-lois.justice.gc.ca/eng/acts/E-22.7/page-1.html">Extractive Sector Transparency Measures Act (ESTMA)</a></strong> helps the Government of Canada deter corruption in the extractive sector. Extractive entities — oil, gas, and mining businesses — that are active in Canada must publicly disclose certain types of payments made to governments in Canada and abroad.</p>
+		<p>Visit <strong><a href="https://www.nrcan.gc.ca/our-natural-resources/minerals-mining/extractive-sector-transparency-measures-act/18180">Natural Resources Canada's website</a></strong> to learn more about the ESTMA.</p>
 
+		<h2>Access ESTMA Data</h2>
+		<p>Explore payments to governments made by companies for extracting oil, gas and mineral resources around the globe. To encourage the analysis of the data published under ESTMA, Natural Resources Canada (NRCan) collects and publishes summary data.</p>
+		<p>ESTMA data are available via three platforms:</p>
 
-
-	<h2 id="call-to-action">Explore the data</h2>
-	<div class="row">
-		<div class="col-sm-12">
-			<p class="mrgn-bttm-0"><a class="btn btn-call-to-action" target=”_blank” href="https://flatgithub.com/blairdrummond/test-flatdata?filename=SAMPLE-ESTMA-data.csv&filters=&sha=2c33af1dab6abd7e98a4274decc0d952db46a13f&sort=jurisdiction%2Casc&stickyColumnName=estma_id">
-			Start exploring the data</a></p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-12">
-			<h2>Extractive Sector Transparency Measures Act (ESTMA)</h2>
-			<p>The <strong><a href="http://laws-lois.justice.gc.ca/eng/acts/E-22.7/page-1.html">Extractive Sector Transparency Measures Act (ESTMA)</a></strong> helps the Government of Canada deter corruption in the extractive sector. Extractive entities — oil, gas, and mining businesses — that are active in Canada must publicly disclose certain types of payments made to governments in Canada and abroad.</p>
-			<p>Visit <strong><a href="https://www.nrcan.gc.ca/our-natural-resources/minerals-mining/extractive-sector-transparency-measures-act/18180">Natural Resources Canada's website</a></strong> to learn more about the ESTMA.</p>
-
-			<h2>Access ESTMA Data</h2>
-			<p>Explore payments to governments made by companies for extracting oil, gas and mineral resources around the globe. To encourage the analysis of the data published under ESTMA, Natural Resources Canada (NRCan) collects and publishes summary data.</p>
-			<p>ESTMA data are available via three platforms:</p>
-
-			<ul>
-				<li>
-					<a href="https://flatgithub.com/blairdrummond/test-flatdata?filename=SAMPLE-ESTMA-data.csv&filters=&sha=2c33af1dab6abd7e98a4274decc0d952db46a13f&sort=jurisdiction%2Casc&stickyColumnName=estma_id">the data in the viewer tool</a>
-				</li>
-				<li>
-					Preview / download the data below</li>
-				<li>
-					<a href="https://www.nrcan.gc.ca/our-natural-resources/minerals-mining/extractive-sector-transparency-measures-act/links-estma-reports/18198">Download PDF reports from the NRCan website</a>
-				</li>
-				</ul>
-
-		</div>
-	</div>
-	<section>
+		<ul>
+			<li>
+				<a href="https://flatgithub.com/blairdrummond/test-flatdata?filename=SAMPLE-ESTMA-data.csv&filters=&sha=2c33af1dab6abd7e98a4274decc0d952db46a13f&sort=jurisdiction%2Casc&stickyColumnName=estma_id">the data in the viewer tool</a>
+			</li>
+			<li>
+				Preview / download the data below</li>
+			<li>
+				<a href="https://www.nrcan.gc.ca/our-natural-resources/minerals-mining/extractive-sector-transparency-measures-act/links-estma-reports/18198">Download PDF reports from the NRCan website</a>
+			</li>
+		</ul>
 		<h2>Data Preview</h2>
-	</section>
-	<div class="row">
 		<a
 			href="https://flatgithub.com/blairdrummond/test-flatdata"
 			target=”_blank”
@@ -178,6 +216,7 @@
 			<img src="assets/Flatviewer.PNG" class="img-fluid" style="height: 250px; width: 100%; display: block;" alt="Date Preview">
 		</a>
 	</div>
+</div>
 
 
 <div class="pagedetails">
