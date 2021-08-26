@@ -1,0 +1,58 @@
+{
+	"@context": {
+		"@version": 1.1,
+		"dct": "http://purl.org/dc/terms/",
+		"title": { "@id": "dct:title", "@container": "@language" },
+		"description": { "@id": "dct:description", "@container": "@language" },
+		"modified": "dct:modified"
+	},
+	"title": {
+		"en": "Checkboxes and radio buttons",
+		"fr": "Cases à cocher et boutons radio"
+	},
+	"description": {
+		"en": "Checkboxes and radio buttons designed based on user experience testing",
+		"fr": "Cases à cocher et boutons radio conçu d'après des recherches d'expérience utilisateur"
+	},
+	"modified": "2021-05-07",
+	"componentName": "gc-chckbxrdio",
+	"status": "stable",
+	"pages": {
+		"docs": [
+			{
+				"title": "Checkboxes and radio buttons",
+				"language": "en",
+				"path": "gc-chckbxrdio-doc-en.html"
+			},
+			{
+				"title": "Cases à cocher et boutons radio",
+				"language": "fr",
+				"path": "gc-chckbxrdio-doc-fr.html"
+			}
+		],
+		"examples": [
+			{
+				"title": "Checkboxes and radio buttons",
+				"language": "en",
+				"path": "gc-chckbxrdio-en.html"
+			},
+			{
+				"title": "Cases à cocher et boutons radio",
+				"language": "fr",
+				"path": "gc-chckbxrdio-fr.html"
+			}
+		],
+		"spec": [
+			{
+				"title": "Cases à cocher et boutons radio : Système de conception de Canada.ca",
+				"language": "fr",
+				"url": "https://conception.canada.ca/configurations-conception-communes/cases-cocher-boutons-radio.html"
+			},
+			{
+				"title": "Checkboxes and radio buttons: Canada.ca design system",
+				"language": "en",
+				"url": "https://design.canada.ca/common-design-patterns/checkboxes-radio-buttons.html"
+			}
+		]
+	}
+}
