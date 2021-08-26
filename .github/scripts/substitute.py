@@ -28,9 +28,9 @@ def templatify(dest: str, values: Dict):
         with open(dest, 'w') as f:
             f.write(s)
 
-def traverse(values):
+def traverse(values, dir=ROOT):
     # Copy and template everything!
-    for (dirpath, dirnames, filenames) in os.walk(ROOT):
+    for (dirpath, dirnames, filenames) in os.walk(dir):
         for filename in filenames:
             fullname = os.sep.join([dirpath, filename])
             templatify(fullname, values)
@@ -50,3 +50,4 @@ if __name__ == "__main__":
         values = json.load(f)
 
     traverse(values)
+    traverse(values=values, dir='site')
