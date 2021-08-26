@@ -9,12 +9,10 @@ from jinja2 import Template, FileSystemLoader, StrictUndefined
 
 jinja_env = jinja2.Environment(
     loader=FileSystemLoader('.'),
-    variable_start_string='<<<',
-    variable_end_string='>>>',
     undefined=StrictUndefined
 )
 
-ROOT = 'docs'
+ROOT = 'assets'
 PRINT_ONLY = False
 
 def templatify(dest: str, values: Dict):
@@ -52,4 +50,3 @@ if __name__ == "__main__":
         values = json.load(f)
 
     traverse(values)
-    traverse(values=values, dir='site/content')
