@@ -24,7 +24,7 @@ jobs:
           pip install jupyter nbconvert
           git clone https://github.com/StatCan/hackathon-ginyu-force-data.git
           mkdir -p site/assets/notebooks/
-          find hackathon-ginyu-force-data/notebooks | xargs -I{} \
+          find hackathon-ginyu-force-data/notebooks -name '*.ipynb' | xargs -I{} \
             jupyter nbconvert {} --TagRemovePreprocessor.remove_cell_tags nbconvert_ignore --to html --no-input
 
       - name: Publish
