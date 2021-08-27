@@ -9,7 +9,6 @@ $(function () {
     "colOrder",
     "exclusions",
     "inclusions",
-    //"inclusionsInfo",
     "aggregatorName",
     "rendererName",
   ];
@@ -34,9 +33,19 @@ $(function () {
   function parseCsv(csv) {
     return new Promise(function (resolve, reject) {
       Papa.parse(csv, {
+        header: true,
+        dynamicTyping: true,
         skipEmptyLines: true,
+        transform: function (value, field) {
+          if (field !== "amount_reported_cad") {
+            return value;
+          }
+          return value.replaceAll(",", "");
+        },
         error: (e) => reject(e),
-        complete: (parsed) => resolve(parsed),
+        complete: (parsed) => {
+          initPivotTable(parsed.data);
+        },
       });
     });
   }
@@ -61,11 +70,11 @@ $(function () {
     }
     const state = _.defaults(hashState, DEFAULT_STATE);
 
-    const iEntity = data[0].indexOf("entity");
-    const uniques = data.slice(1).reduce(function (memo, row) {
-      memo[row[iEntity]] = true;
-      return memo;
-    }, {});
+    const numEntities = _(data)
+      .map((row) => row.entity)
+      .uniq()
+      .size();
+
     $("#table").pivotUI(
       data,
       {
@@ -80,7 +89,7 @@ $(function () {
         ],
         hiddenFromDragDrop: ["amount_reported_cad"],
         autoSortUnusedAttrs: true,
-        menuLimit: Object.keys(uniques).length,
+        menuLimit: numEntities,
         renderers: renderers,
         onRefresh: onTableRefresh,
       },
