@@ -27,6 +27,19 @@ jobs:
           find hackathon-ginyu-force-data/notebooks -name '*.ipynb' | xargs -I{} \
             jupyter nbconvert {} --TagRemovePreprocessor.remove_cell_tags nbconvert_ignore --to html --no-input --output-dir=site/assets/notebooks/
 
+      - name: Set up Node 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install Minify
+        run: |
+          npm i minify -g
+      - name: Minify HTML
+        run: |
+          cd site/assets/notebooks/
+          for f in *.html; do
+              minify $f > min.$f; mv min.$f $f || true
+          done
       - name: Publish
         uses: peaceiris/actions-gh-pages@v3
         with:
