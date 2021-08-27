@@ -21,6 +21,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install jupyter nbconvert
+          git clone https://github.com/StatCan/hackathon-ginyu-force-data.git
+          mkdir -p site/assets/notebooks/
+          find hackathon-ginyu-force-data/notebooks | xargs -I{} \
+            jupyter nbconvert {} --TagRemovePreprocessor.remove_cell_tags nbconvert_ignore --to html --no-input
+
       - name: Publish
         uses: peaceiris/actions-gh-pages@v3
         with:
