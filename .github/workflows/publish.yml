@@ -24,7 +24,8 @@ jobs:
           pip install jupyter nbconvert
           mkdir -p site/notebooks
           cd site/notebooks
-          find ../../notebooks -name '*.ipynb' | xargs -I{} sh -c 'jupyter nbconvert {} --format html'
+          find ../../notebooks -name '*.ipynb' | xargs -I{} sh -c 'echo jupyter nbconvert {} --to html'
+          find ../../notebooks -name '*.ipynb' | xargs -I{} sh -c 'jupyter nbconvert {} --to html'
       - name: Publish
         uses: peaceiris/actions-gh-pages@v3
         with:
