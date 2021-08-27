@@ -25,7 +25,7 @@ jobs:
           git clone https://github.com/StatCan/hackathon-ginyu-force-data.git
           mkdir -p site/assets/notebooks/
           find hackathon-ginyu-force-data/notebooks -name '*.ipynb' | xargs -I{} \
-            jupyter nbconvert {} --TagRemovePreprocessor.remove_cell_tags nbconvert_ignore --to html --no-input
+            jupyter nbconvert {} --TagRemovePreprocessor.remove_cell_tags nbconvert_ignore --to html --no-input --output-dir=site/assets/notebooks/
 
       - name: Publish
         uses: peaceiris/actions-gh-pages@v3
