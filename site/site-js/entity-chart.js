@@ -16,13 +16,23 @@
   document.addEventListener("DOMContentLoaded", main);
 
   async function main() {
-    const dfWorker = new Worker("/site-js/data-frame-worker.js");
+    const loc = window.location;
+    // TODO: Improve this hacky business.
+    // If on GitHub pages, assume site is deployed at root of repo path.
+    // Note: GitHub pages root is <account>.github.io/<repo_name>/
+    let workerUrl = loc.host.endsWith(".github.io")
+      ? loc.pathname.match(/\/[^/]*/)[0]
+      : "";
+    workerUrl += "/site-js/data-frame-worker.js";
+    const dfWorker = new Worker(workerUrl);
     dfWorker.onmessage = onDataFrameLoaded;
     dfWorker.postMessage(DATA_URL);
   }
 
   function onDataFrameLoaded(e) {
     const { data, columns } = e.data;
+    e.target.terminate();
+
     dataFrame = new DataFrame(data, columns);
     allEntitiesFrame = dataFrame
       .groupBy(cols.cycle)
@@ -64,14 +74,11 @@
   }
 
   function renderChart(entity) {
-    const t0 = performance.now();
     const data = (
       entity === "__ALL__"
         ? allEntitiesFrame
         : dataFrame.where((row) => row.get(cols.entity) == entity)
     ).toCollection();
-    const t1 = performance.now();
-    console.log(`Render ${entity}`, t1 - t0);
 
     const entityName = entity == "__ALL__" ? "(All)" : entity;
     const ctx = document.getElementById("chart").getContext("2d");
