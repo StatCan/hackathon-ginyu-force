@@ -1,6 +1,5 @@
 # Main targets:
 #   * install: Install Python virtual environment and project dependencies
-#   * test: Run all checks on project resources
 #   * serve: Start local server 
 	
 check-prerequisites:
@@ -19,7 +18,7 @@ install-venv: check-prerequisites
 	. .venv/bin/activate; pip install -Ur requirements.txt
 
 serve: 
-	. .venv/bin/activate && mkdocs serve -f mkdocs.yml
+	. .venv/bin/activate && python3 -m http.server --b 127.0.0.1 8080 -d site/
 
 .PHONY: \
 	check-prerequisites \
