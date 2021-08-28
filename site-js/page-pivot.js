@@ -61,7 +61,7 @@ $(function () {
     try {
       var hashState = _(getNormalizedHash())
         .thru((hash) => new URLSearchParams(hash).get("state"))
-        .thru(atob)
+        .thru(LZString.decompressFromBase64)
         .thru(JSON.parse)
         .pick(STATE_KEYS)
         .value();
@@ -101,7 +101,7 @@ $(function () {
     const state = _(config)
       .pick(STATE_KEYS)
       .thru(JSON.stringify)
-      .thru(btoa)
+      .thru(LZString.compressToBase64)
       .value();
     const params = new URLSearchParams(getNormalizedHash());
     params.set("state", state);
