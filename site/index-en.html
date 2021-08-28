@@ -9,6 +9,18 @@
 <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon" />
 <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css" />
 <noscript><link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/css/noscript.min.css" /></noscript>
+
+
+<style>
+	@media (min-width: 1200px) {
+		.with-max-height {
+			max-height: 300px;
+		}	
+	}
+</style>
+
+
+
 </head>
 <body vocab="http://schema.org/" typeof="WebPage"><nav><ul id="wb-tphp">
 	<li class="wb-slc"><a class="wb-sl" href="#wb-cont">Skip to main content</a></li><li class="wb-slc visible-sm visible-md visible-lg"><a class="wb-sl" href="#wb-info">Skip to About this site</a></li></ul></nav>
@@ -95,6 +107,18 @@
 
 <main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
 <h1 id="wb-cont" property="name">Open data on oil, gas, and mining payments</h1>
+
+<div class="row">
+	<div class="col-xs-12">
+		<p>
+			The <a href="http://laws-lois.justice.gc.ca/eng/acts/E-22.7/page-1.html">Extractive
+			Sector Transparency Measures Act</a> helps the Government of Canada deter
+			corruption in the extractive sector. Extractive entities — oil, gas, and
+			mining businesses — that are active in Canada must publicly disclose
+			certain types of payments made to governments in Canada and abroad.
+		</p>
+	</div>
+</div>
 
 <div class="row" style="margin-top: 16px;">
 	<style>
@@ -184,68 +208,106 @@
 	</div>
 </div>
 
-
+<div class="row mrgn-tp-md">
+	<div class="col-md-6">
+		<h3>Payments per reporting cycle</h3>
+		<select id="entities"></select>
+    <canvas id="chart" height="190" class="with-max-height" style="display: block; margin-top: 18px"></canvas>
+	</div>
+	<div class="col-md-6">
+		<h3>Online pivot table</h3>
+		<div style="text-align: center;">
+			<a target="_blank" href="pivot.html">
+				<img src="assets/pivot.png"
+					class="img-responsive thumbnail with-max-height"
+					style="margin-left: auto; margin-right: auto;"
+					alt="Pivot table"
+				/>
+			</a>
+			<a class="btn btn-default" target="_blank" href="pivot.html">Open pivot table</a>
+		</div>
+	</div>
+</div>
+<h1>More ways to explore</h1>
 <div class="row">
 	<div class="col-sm-6">
-		<h2>Jump right in!</h2>
+		<h2>Hit the microdata!</h2>
 		<ul>
 			<li>View and filter all the data in your browser</li>
+			<li>Navigate between different versions</li>
 			<li>Download the results in a variety of formats</li>
 		</ul>
 		<a class="btn btn-call-to-action" target=”_blank” href="https://flatgithub.com/StatCan/hackathon-ginyu-force-data?filename=System_All_Payments_DataDump.csv">
-			Start exploring the data
+			Start exploring
 		</a>
 	</div>
-	<div class="col-sm-6">
+	<div class="col-sm-6" style="text-align: center;">
 		<a target=”_blank” href="https://flatgithub.com/StatCan/hackathon-ginyu-force-data?filename=System_All_Payments_DataDump.csv">
-			<img src="assets/flat-viewer.png" style="display: block; margin-top: 42px; width: 100%; max-height: 250px;" alt="Date Preview">
+			<img src="assets/flat-viewer.png"
+				class="img-responsive thumbnail with-max-height"
+				style="margin-top: 42px;"
+				alt="Data Preview"
+			/>
 		</a>
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-6">
-		<h2>Level up your analysis with the <a href="https://analytics-platform.statcan.gc.ca/covid19">Advanced Analytics Workspace!</a></h2>
+	<div class="col-sm-6 col-sm-push-6">
+		<h2>Level up your analysis with the <abbr title="Advanced Analytics Workspace"><a href="https://analytics-platform.statcan.gc.ca/covid19">AAW</a></abbr>!</h2>
 		<ul>
-			<li>Use Data Analytics as a Service to create new insights</li>
+			<li>Use powerful tools to create new insights</li>
 			<li>Work with your data in R, Python, or Julia</li>
 		</ul>
 		<a class="btn btn-call-to-action" target=”_blank” href="https://analytics-platform.statcan.gc.ca/covid19">
 			Start creating
 		</a>
 	</div>
-	<div class="col-sm-6">
+	<div class="col-sm-6 col-sm-pull-6" style="text-align: center;">
 		<a target=”_blank” href="https://github.com/StatCan/hackathon-ginyu-force/blob/main/notebooks/jupyterlab-plotly-demo.ipynb">
-			<img src="assets/jupyter-preview.png" style="display: block; margin-top: 42px; width: 100%; max-height: 250px;" alt="Date Preview">
+			<img src="assets/jupyter.png"
+				class="img-responsive thumbnail with-max-height"
+				style="margin-top: 42px;"
+				alt="JupyterLab"
+			/>
 		</a>
 	</div>
 </div>
 <div class="row">
-	<div class="col-sm-12"></div>
-		<h2>Extractive Sector Transparency Measures Act (<abbr title="Extractive Sector Transparency Measures Act">ESTMA</abbr>)</h2>
-		<p>The <a href="http://laws-lois.justice.gc.ca/eng/acts/E-22.7/page-1.html">Extractive Sector Transparency Measures Act</a> helps the Government of Canada deter corruption in the extractive sector. Extractive entities — oil, gas, and mining businesses — that are active in Canada must publicly disclose certain types of payments made to governments in Canada and abroad.</p>
-		<p>Visit <a href="https://www.nrcan.gc.ca/our-natural-resources/minerals-mining/extractive-sector-transparency-measures-act/18180">our website</a> to learn more about the <abbr title="Extractive Sector Transparency Measures Act">ESTMA</abbr>.</p>
+	<div class="col-sm-12">
+		<h2>Other data sources</h2>
+		<p>International</p>
 
-		<h2>Access <abbr title="Extractive Sector Transparency Measures Act">ESTMA</abbr> Data</h2>
-		<p>Explore payments to governments made by companies for extracting oil, gas and mineral resources around the globe. To encourage the analysis of the data published under <abbr title="Extractive Sector Transparency Measures Act">ESTMA</abbr>, Natural Resources Canada collects and publishes summary data.</p>
-		<p><abbr title="Extractive Sector Transparency Measures Act">ESTMA</abbr> data are available via three platforms:</p>
-
-		<ul>
-			<li>
-				<a target="_blank" href="https://flatgithub.com/StatCan/hackathon-ginyu-force-data?filename=System_All_Payments_DataDump.csv">
-					Use the online data viewer
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/StatCan/hackathon-ginyu-force-data">
-					Download full datasets directly from the repository
-				</a>
-			</li>
-			<li>
-				<a href="https://www.nrcan.gc.ca/our-natural-resources/minerals-mining/extractive-sector-transparency-measures-act/links-estma-reports/18198">
-					Download <abbr title="Portable Document Format">PDF</abbr> reports from our website
-				</a>
-			</li>
-		</ul>
+		<!-- <style>
+			iframe.plotly {
+				display: block;
+				margin: 0 auto;
+				width: 570px;
+				height: 450px;
+				border: none;
+			}
+		</style>
+		<div class="row">
+			<div class="col-lg-6"><h4 class="mrgn-bttm-0">Payments per Entity</h4></div>
+			<div class="col-lg-6">
+				<h4 class="mrgn-bttm-0">Something Else</h4>
+				<iframe class="plotly" src="assets/notebook-ex.html" scrolling="no"></iframe>
+			</div>
+		</div>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				for (frame of document.querySelectorAll('iframe.plotly')) {
+					const frameDoc = frame.contentDocument;
+					frameDoc.addEventListener('DOMContentLoaded', function() {
+						const plot = frameDoc.querySelector('.plotly-graph-div').parentNode.cloneNode(true)
+						plot.querySelector('.plotly-graph-div').style.height = `${frame.offsetHeight}px`
+						frameDoc.body.style.margin = '0'
+						frameDoc.body.style.padding = '0'
+						frameDoc.body.innerHTML = ''
+						frameDoc.body.appendChild(plot)
+					})
+				}
+			})
+		</script> -->
 
 	</div>
 </div>
