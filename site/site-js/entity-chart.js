@@ -1,5 +1,6 @@
 import {
   op,
+  query,
   worker,
 } from "https://cdn.jsdelivr.net/npm/arquero-worker@0.0.2/dist/arquero-worker-client.mjs";
 
@@ -29,12 +30,14 @@ async function main() {
     ? loc.pathname.match(/\/[^/]*/)[0]
     : "";
   workerUrl += "/site-js/arquero-worker.min.js";
+
   const aqWorker = worker(workerUrl);
+  let stop = timer("Load CSV (worker)");
+  await aqWorker.load("payments", DATA_URL);
+  stop();
 
-  const rootDf = await aqWorker.load("payments", DATA_URL);
-
-  let stop = timer("Worker frame");
-  const perEntityDf = await rootDf
+  stop = timer("Per entity grouping (worker)");
+  let perEntityQuery = query("payments")
     .select({
       [cols.entity]: "entity",
       [cols.cycle]: "cycle",
@@ -46,22 +49,36 @@ async function main() {
     })
     .groupby("entity", "cycle")
     .rollup({ amount: op.sum("amount") })
-    .orderby("cycle")
-    .fetch();
+    .orderby("cycle");
+  const perEntityRemote = await aqWorker.query(
+    perEntityQuery.toObject(),
+    {},
+    "groupedPayments"
+  );
   stop();
 
-  stop = timer("Foreground frames");
-  const allEntityData = perEntityDf
+  stop = timer("All entity grouping (worker)");
+  const allEntityRemote = perEntityRemote
     .groupby("cycle")
-    .rollup({ amount: op.sum("amount") })
-    .objects();
-  const entities = perEntityDf
+    .rollup({ amount: op.sum("amount") });
+  stop();
+  stop = timer("List entities (remote)");
+  const entitiesRemote = perEntityRemote
     .select("entity")
     .dedupe()
-    .orderby("entity")
-    .reify()
-    .column("entity").data;
+    .orderby("entity");
   stop();
+
+  stop = timer("Fetch results");
+  const [perEntityDf, allEntityDf, entityDf] = await Promise.all([
+    perEntityRemote.fetch(),
+    allEntityRemote.fetch(),
+    entitiesRemote.fetch(),
+  ]);
+  stop();
+
+  const entities = entityDf.column("entity").data;
+  const allEntityObjects = allEntityDf.objects();
 
   document.getElementById("chart-spinner").style.display = "none";
   document.getElementById("chart-view").style.display = "block";
@@ -72,7 +89,7 @@ async function main() {
       value == "__ALL__"
         ? {
             entity: "(All Entities)",
-            data: allEntityData,
+            data: allEntityObjects,
           }
         : {
             entity: value,
@@ -84,7 +101,7 @@ async function main() {
     renderChart(opts);
   }, entities);
 
-  renderChart({ entity: "(All Entities)", data: allEntityData });
+  renderChart({ entity: "(All Entities)", data: allEntityObjects });
 }
 
 function initEntityDropdown(onEntitySelect, entities) {
