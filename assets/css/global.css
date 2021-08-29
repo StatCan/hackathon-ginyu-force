@@ -1,0 +1,51 @@
+@media (min-width: 1200px) {
+  .with-max-height {
+    max-height: 300px;
+  }
+}
+
+.loading-spinner {
+  min-height: 60px;
+  background: center center no-repeat url("../spinner.gif");
+  background-size: contain;
+}
+
+.indicator {
+  overflow: hidden;
+  padding: 8px;
+  text-align: center;
+}
+.indicator img {
+  display: block;
+  float: left;
+  margin-right: 8px;
+  width: 86px;
+}
+.indicator p {
+  float: left;
+  width: 120px;
+}
+.indicator p > span:nth-child(2) {
+  display: block;
+  margin-top: 4px;
+  font-size: 48px;
+}
+.indicator [data-json-replacewith]:after {
+  content: "—";
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .indicator img, .indicator p {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .indicator p {
+    width: auto;
+  }
+}
+@media (max-width: 767px) {
+  .indicator {
+    text-align: left !important;
+  }
+}
