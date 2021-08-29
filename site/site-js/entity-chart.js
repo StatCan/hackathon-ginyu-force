@@ -40,8 +40,11 @@
       .rename("aggregation", cols.amount);
 
     const entities = dataFrame.distinct(cols.entity).toArray().flat().sort();
-    initEntityDropdown(entities);
 
+    document.getElementById("chart-spinner").style.display = "none";
+    document.getElementById("chart-view").style.display = "block";
+
+    initEntityDropdown(entities);
     renderChart("__ALL__");
   }
 

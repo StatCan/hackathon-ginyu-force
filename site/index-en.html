@@ -10,14 +10,7 @@
 <link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css" />
 <noscript><link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/css/noscript.min.css" /></noscript>
 
-
-<style>
-	@media (min-width: 1200px) {
-		.with-max-height {
-			max-height: 300px;
-		}	
-	}
-</style>
+<link rel="stylesheet" href="assets/css/global.css"/>
 
 <!-- Chart function -->
 <link
@@ -138,47 +131,6 @@
 </div>
 
 <div class="row" style="margin-top: 16px;">
-	<style>
-		.indicator {
-			overflow: hidden;
-			padding: 8px;
-			text-align: center;
-		}
-		.indicator img {
-			display: block;
-			float: left;
-			margin-right: 8px;
-			width: 86px;
-		}
-		.indicator p {
-			float: left;
-			width: 120px;
-		}
-		.indicator p > span:nth-child(2) {
-			display: block;
-			margin-top: 4px;
-			font-size: 48px;
-		}
-		.indicator [data-json-replacewith]:after {
-			content: "—";
-		}
-		@media (min-width: 768px) and (max-width: 1199px) {
-			.indicator img, .indicator p {
-				float: none;
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			.indicator p {
-				width: auto;
-			}
-		}
-		@media (max-width: 767px) {
-			.indicator {
-				text-align: left !important;
-			}
-		}
-	</style>
 	<div class="col-sm-3">
 		<div class="indicator">
 			<img src="assets/earth.svg" alt=""/>
@@ -228,8 +180,13 @@
 <div class="row mrgn-tp-md">
 	<div class="col-md-6">
 		<h3>Payments per reporting cycle</h3>
-		<select id="entities"></select>
-    <canvas id="chart" height="190" class="with-max-height" style="display: block; margin-top: 18px"></canvas>
+		<div id="chart-view" style="display: none;">
+			<select id="entities"></select>
+			<canvas id="chart" height="190" class="with-max-height" style="display: block; margin-top: 18px"></canvas>
+		</div>
+		<div id="chart-spinner" class="loading-spinner" role="status" style="margin-top: 42px; height: 180px">
+			<span class="sr-only">Loading…</span>
+		</div>
 	</div>
 	<div class="col-md-6">
 		<h3>Online pivot table</h3>
