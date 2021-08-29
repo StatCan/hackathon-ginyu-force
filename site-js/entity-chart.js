@@ -150,6 +150,11 @@ function renderChart({ entity, data }) {
     backgroundColor: CHART_COLORS[i % CHART_COLORS.length],
   }));
 
+  const currencyFormatter = new Intl.NumberFormat(undefined, {
+    style: "currency",
+    currency: "CAD",
+  });
+
   const ctx = document.getElementById("chart").getContext("2d");
   if (chart) {
     chart.destroy();
@@ -181,20 +186,24 @@ function renderChart({ entity, data }) {
           position: "bottom",
         },
         tooltip: {
-          mode: "index",
+          mode: "x",
           callbacks: {
+            label(context) {
+              let label = context.dataset.label || "";
+              if (label) {
+                label += ": ";
+              }
+              if (context.parsed.y !== null) {
+                label += currencyFormatter.format(context.parsed.y);
+              }
+              return label;
+            },
             footer(tooltipItems, _data) {
               let total = 0;
               for (const item of tooltipItems) {
-                total += item.raw.y;
+                total += item.parsed.y;
               }
-              return (
-                "Total: " +
-                total.toLocaleString(undefined, {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2,
-                })
-              );
+              return "Total: " + currencyFormatter.format(total);
             },
           },
         },
