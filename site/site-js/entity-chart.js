@@ -11,10 +11,22 @@ const WORKER_URL =
   "https://cdn.jsdelivr.net/npm/arquero-worker@0.0.2/dist/arquero-worker.min.js";
 const DATA_URL =
   "https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/SAMPLE-ESTMA-data.csv";
+
+const CHART_COLORS = [
+  "#2b4e5c",
+  "#8278a5",
+  "#389e93",
+  "#707070",
+  "#e6b868",
+  "#e76f51",
+  "#333333",
+];
+
 const cols = {
   entity: "entity",
   cycle: "reporting_cylce",
   amount: "amount_reported_cad",
+  type: "payment_category",
 };
 
 let chart = null;
@@ -38,12 +50,13 @@ async function main() {
       [cols.entity]: "entity",
       [cols.cycle]: "cycle",
       [cols.amount]: "amount",
+      [cols.type]: "type",
     })
     .derive({
       cycle: (d) => "" + d.cycle,
       amount: (d) => op.parse_float(op.replace(d.amount, /,/g, "")),
     })
-    .groupby("entity", "cycle")
+    .groupby("entity", "cycle", "type")
     .rollup({ amount: op.sum("amount") })
     .orderby("cycle");
   const perEntityRemote = await aqWorker.query(
@@ -55,7 +68,7 @@ async function main() {
 
   stop = timer("All entity grouping (worker)");
   const allEntityRemote = perEntityRemote
-    .groupby("cycle")
+    .groupby("cycle", "type")
     .rollup({ amount: op.sum("amount") })
     .orderby("cycle");
   stop();
@@ -122,6 +135,21 @@ function createOption(value, text) {
 }
 
 function renderChart({ entity, data }) {
+  const datasets = Object.entries(
+    data.reduce(function (memo, row) {
+      const type = row.type;
+      if (!memo.hasOwnProperty(type)) {
+        memo[type] = [];
+      }
+      memo[type].push({ x: row.cycle, y: row.amount });
+      return memo;
+    }, {})
+  ).map(([type, data], i) => ({
+    data,
+    label: type,
+    backgroundColor: CHART_COLORS[i % CHART_COLORS.length],
+  }));
+
   const ctx = document.getElementById("chart").getContext("2d");
   if (chart) {
     chart.destroy();
@@ -129,22 +157,16 @@ function renderChart({ entity, data }) {
   chart = new Chart(ctx, {
     type: "bar",
     data: {
-      datasets: [
-        {
-          data,
-          label: entity,
-          backgroundColor: "#00cc96",
-        },
-      ],
+      datasets,
     },
     options: {
-      parsing: {
-        xAxisKey: "cycle",
-        yAxisKey: "amount",
-      },
       scales: {
-        x: { title: { display: true, text: "Reporting Cycle" } },
+        x: {
+          stacked: true,
+          title: { display: true, text: "Reporting Cycle" },
+        },
         y: {
+          stacked: true,
           title: { display: true, text: "Amount Reported ($)" },
           ticks: {
             callback: function (value, index, values) {
@@ -155,7 +177,26 @@ function renderChart({ entity, data }) {
       },
       plugins: {
         legend: {
-          display: false,
+          display: true,
+          position: "bottom",
+        },
+        tooltip: {
+          mode: "index",
+          callbacks: {
+            footer(tooltipItems, _data) {
+              let total = 0;
+              for (const item of tooltipItems) {
+                total += item.raw.y;
+              }
+              return (
+                "Total: " +
+                total.toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })
+              );
+            },
+          },
         },
       },
     },
