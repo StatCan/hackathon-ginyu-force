@@ -56,7 +56,8 @@ async function main() {
   stop = timer("All entity grouping (worker)");
   const allEntityRemote = perEntityRemote
     .groupby("cycle")
-    .rollup({ amount: op.sum("amount") });
+    .rollup({ amount: op.sum("amount") })
+    .orderby("cycle");
   stop();
   stop = timer("List entities (remote)");
   const entitiesRemote = perEntityRemote
@@ -104,7 +105,7 @@ function initEntityDropdown(onEntitySelect, entities) {
   const entityDropdown = document.querySelector("#entities");
 
   const frag = document.createDocumentFragment();
-  frag.appendChild(createOption("__ALL__", "(All)"));
+  frag.appendChild(createOption("__ALL__", "(All Entities)"));
   entities
     .map((entity) => createOption(entity, entity))
     .forEach((option) => frag.appendChild(option));
