@@ -7,8 +7,8 @@ import {
 import "https://cdn.jsdelivr.net/npm/jquery@2.2.4";
 import "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0";
 
-//const op = aq.op;
-
+const WORKER_URL =
+  "https://cdn.jsdelivr.net/npm/arquero-worker@0.0.2/dist/arquero-worker.min.js";
 const DATA_URL =
   "https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/SAMPLE-ESTMA-data.csv";
 const cols = {
@@ -22,16 +22,12 @@ let chart = null;
 document.addEventListener("DOMContentLoaded", main);
 
 async function main() {
-  const loc = window.location;
-  // TODO: Improve this hacky business.
-  // If on GitHub pages, assume site is deployed at root of repo path.
-  // Note: GitHub pages root is <account>.github.io/<repo_name>/
-  let workerUrl = loc.host.endsWith(".github.io")
-    ? loc.pathname.match(/\/[^/]*/)[0]
-    : "";
-  workerUrl += "/site-js/arquero-worker.min.js";
+  const workerObjUrl = await fetch(WORKER_URL)
+    .then((r) => r.text())
+    .then((js) => new Blob([js], { type: "application/json" }))
+    .then(URL.createObjectURL);
+  const aqWorker = worker(workerObjUrl);
 
-  const aqWorker = worker(workerUrl);
   let stop = timer("Load CSV (worker)");
   await aqWorker.load("payments", DATA_URL);
   stop();
