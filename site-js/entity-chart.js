@@ -10,7 +10,7 @@ import "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0";
 const WORKER_URL =
   "https://cdn.jsdelivr.net/npm/arquero-worker@0.0.2/dist/arquero-worker.min.js";
 const DATA_URL =
-  "https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/SAMPLE-ESTMA-data.csv";
+  "https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/estma-payments.csv";
 
 const CHART_COLORS = [
   "#2b4e5c",
@@ -24,7 +24,7 @@ const CHART_COLORS = [
 
 const cols = {
   entity: "entity",
-  cycle: "reporting_cylce",
+  cycle: "reporting_cycle",
   amount: "amount_reported_cad",
   type: "payment_category",
 };
@@ -54,7 +54,6 @@ async function main() {
     })
     .derive({
       cycle: (d) => "" + d.cycle,
-      amount: (d) => op.parse_float(op.replace(d.amount, /,/g, "")),
     })
     .groupby("entity", "cycle", "type")
     .rollup({ amount: op.sum("amount") })
