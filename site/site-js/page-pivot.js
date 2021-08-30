@@ -42,10 +42,8 @@ $(function () {
           }
           return value.replaceAll(",", "");
         },
-        error: (e) => reject(e),
-        complete: (parsed) => {
-          initPivotTable(parsed.data);
-        },
+        error: reject,
+        complete: resolve,
       });
     });
   }
@@ -81,7 +79,7 @@ $(function () {
         ...state,
         hiddenAttributes: [
           "estma_id",
-          "payment_category",
+          "payee_project_name",
           "period_end_date",
           "period_start_date",
           "web_Link",
