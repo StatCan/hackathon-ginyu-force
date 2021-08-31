@@ -1,6 +1,6 @@
 $(function () {
   const DATA_URL =
-    "https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/SAMPLE-ESTMA-data.csv";
+    "https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/estma-payments.csv";
   const STATE_KEYS = [
     "cols",
     "rows",
@@ -15,7 +15,7 @@ $(function () {
   const DEFAULT_STATE = {
     aggregatorName: "Sum",
     vals: ["amount_reported_cad"],
-    cols: ["reporting_cylce"],
+    cols: ["reporting_cycle"],
     rows: ["jurisdiction"],
   };
 
@@ -42,10 +42,8 @@ $(function () {
           }
           return value.replaceAll(",", "");
         },
-        error: (e) => reject(e),
-        complete: (parsed) => {
-          initPivotTable(parsed.data);
-        },
+        error: reject,
+        complete: resolve,
       });
     });
   }
@@ -81,10 +79,10 @@ $(function () {
         ...state,
         hiddenAttributes: [
           "estma_id",
-          "payment_category",
+          "payee_project_name",
           "period_end_date",
           "period_start_date",
-          "web_Link",
+          "web_link",
           "payment_notes",
         ],
         hiddenFromDragDrop: ["amount_reported_cad"],
