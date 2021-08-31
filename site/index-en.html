@@ -259,38 +259,48 @@
 
 <div class="row">
 	<div class="col-sm-12">
-		<h2>Reports</h2>
-		<div class="col-sm-4">
-			<h3>Word Clustering</h3>
-			<a target="_blank" href="https://github.com/StatCan/hackathon-ginyu-force-data/blob/main/notebooks/Word_Embedding.ipynb" style="display: inline-block">
-				<img style="background-color: #FFF;" src="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/notebooks/plot5.svg"
-					class="img-responsive thumbnail with-max-height"
-					style="margin-bottom: 0;"
-					alt="Jupyter Notebook (Julia)"
+		<h2>Ready-to-Go Notebooks</h2>
+	</div>
+</div>
+<div class="row wb-eqht">
+	<div class="col-sm-4">
+		<h3>Word Clustering and Dedupe</h3>
+		<a target="_blank"
+			href="https://github.com/StatCan/hackathon-ginyu-force-data/blob/main/notebooks/Word_Embedding.ipynb"
+			style="display: inline-block;">
+			<img src="assets/word-cluster.png"
+				class="img-responsive thumbnail with-max-height mrgn-bttm-0"
+				style="padding: 0; border-width: 6px; background-color: #fff;"
+				alt="Jupyter Notebook (Julia)"
+			/>
+		</a>
+		<p>
+			Filter, cluster, and plot <code>payee_project_name</code> labels, in order
+			to identify proximity or duplicates. Over 700 duplicates identified!
+			Written in Julia.
+		</p>
+	</div>
+	<div class="col-sm-4">
+		<h3>Grouping by Country and&nbsp;Entity</h3>
+		<div class="text-center">
+			<a target="_blank"
+				href="https://github.com/StatCan/hackathon-ginyu-force-data/blob/main/notebooks/estma-country-entity-groupby.ipynb"
+				style="display: inline-block;">
+				<img src="assets/jupyter-r-group-by.png"
+					class="img-responsive thumbnail with-max-height mrgn-bttm-0"
+					alt="Jupyter Notebook (R)"
 				/>
 			</a>
-			<p>
-				Filter, cluster, and plot payee_project_name labels, in order to identify proximity or duplicates.
-				Over 700 duplicates identified! Written in Julia.
-			</p>
 		</div>
-		<div class="col-sm-4">
-			<h3>Group By Country and Entity</h3>
-			<a target="_blank" href="https://github.com/StatCan/hackathon-ginyu-force-data/blob/main/notebooks/estma-country-entity-groupby.ipynb" style="display: inline-block">
-				<img src="assets/jupyter-r-group-by.png"
-					class="img-responsive thumbnail with-max-height"
-						style="margin-bottom: 0;"
-						alt="Jupyter Notebook (R)"
-					/>
-			</a>
-			<p>
-				Analysis of the distribution of payments buy country and entity. Plots the distribution
-				of contribution per percentile, and finds that the vast majority of contributions come
-				from the top one percent. Analysis conducted in R with dplyr.
-			</p>
-		</div>
-		<div class="col-sm-4">
-			<h3>Payments by entity</h3>
+		<p>
+			Analyzes and plots the distribution of payment contribution per
+			percentile, and finds which entities make the majority share of payments.
+			Written in&nbsp;R.
+		</p>
+	</div>
+	<div class="col-sm-4">
+		<h3>Payments by Entity and Category</h3>
+		<section class="eqht-trgt">
 			<a target="_blank" href="https://github.com/StatCan/hackathon-ginyu-force-data/blob/main/notebooks/component-14.ipynb" style="display: inline-block">
 				<img src="assets/jupyter-plotly.png"
 					class="img-responsive thumbnail with-max-height"
@@ -298,10 +308,11 @@
 					alt="Jupyter Notebook (Python)"
 				/>
 			</a>
-			<p>
-				A Pivot table in Plotly to examine payments grouped by entity, using Pandas. Written in Python.
-			</p>
-		</div>
+		</section>
+		<p>
+			A pivot table in Plotly to examine the amounts and types of payments
+			entities make each year. Uses Pandas for data frames. Written in Python.
+		</p>
 	</div>
 </div>
 
