@@ -1,3 +1,21 @@
+#hackathon-alert {
+  padding: 8px 12px 9px;
+  background-color: #f9f4d4;
+}
+#hackathon-alert p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#hackathon-alert b {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  margin-right: 2px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #c18000;
+}
+
 @media (min-width: 1200px) {
   .with-max-height {
     max-height: 300px;
