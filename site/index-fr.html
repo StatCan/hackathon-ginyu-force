@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+<title>Ouvrir les données LMTSE - Canada.ca</title>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content=" " />
+<link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/css/theme.min.css" />
+<noscript><link rel="stylesheet" href="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/css/noscript.min.css" /></noscript>
+
+<link rel="stylesheet" href="assets/css/global.css"/>
+
+<!-- Chart function -->
+<link
+	href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+	rel="stylesheet"
+/>
+<style>
+	.select2.select2-container {
+		max-width: 100%;
+		font-size: 85%;
+	}
+	.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+		background-color: #26374a;
+	}
+	/* .select2-container--default .select2-search--dropdown .select2-search__field:focus {
+		border-color: #f00
+	} */
+</style>
+
+
+</head>
+<body vocab="http://schema.org/" typeof="WebPage"><nav><ul id="wb-tphp">
+	<li class="wb-slc"><a class="wb-sl" href="#wb-cont">Passer au contenu principal</a></li><li class="wb-slc visible-sm visible-md visible-lg"><a class="wb-sl" href="#wb-info">Passer à «&#160;À propos de ce site&#160;»</a></li></ul></nav>
+
+<header>
+	<div id="hackathon-alert">
+		<p class="container">
+			<b>⚠</b> Ce site Web est destiné à un hackathon. Veuillez ne pas
+			vous fier sur son contenu ou le traiter comme une source de données officielle.
+		</p>
+	</div>
+	<div id="wb-bnr" class="container">
+		<div class="row">
+			<section id="wb-lng" class="col-xs-3 col-sm-12 pull-right text-right">
+	<h2 class="wb-inv">Sélection de la langue</h2>
+	<ul class="list-inline mrgn-bttm-0">
+		<li>
+			<a lang="fr" hreflang="fr" href="index-en.html">
+				<span class="hidden-xs">English</span>
+				<abbr title="Français" class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase">fr</abbr>
+			</a>
+		</li>
+	</ul>
+</section>
+
+			<div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" typeof="GovernmentOrganization">
+	<a href="https://wet-boew.github.io/gcweb/" property="url">
+		<img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/sig-blk-en.svg" alt="Government of Canada" property="logo" /><span class="wb-inv"> / <span lang="fr">Gouvernement du Canada</span></span>
+	</a>
+	<meta property="name" content="Government of Canada">
+	<meta property="areaServed" typeof="Country" content="Canada" />
+	<link property="logo" href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/wmms-blk.svg" />
+</div>
+
+
+<section id="wb-srch" class="col-lg-offset-4 col-md-offset-4 col-sm-offset-2 col-xs-12 col-sm-5 col-md-4">
+	<h2>Recherche</h2>
+	<form action="#" method="post" name="cse-search-box" role="search">
+		<div class="form-group wb-srch-qry">
+			<label for="wb-srch-q" class="wb-inv">Chercher Canada.ca</label>
+			<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170" placeholder="Search Canada.ca" />
+			<datalist id="wb-srch-q-ac"></datalist>
+		</div>
+		<div class="form-group submit">
+			<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub">
+				<span class="glyphicon-search glyphicon"></span>
+				<span class="wb-inv">Chercher</span>
+			</button>
+		</div>
+	</form>
+</section>
+
+		</div>
+	</div><nav class="gcweb-menu" typeof="SiteNavigationElement">
+		<div class="container">
+			<h2 class="wb-inv">Menu</h2>
+			<button type="button" aria-haspopup="true" aria-expanded="false">Menu<span class="wb-inv"> principal</span> <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+			<ul role="menu" aria-orientation="vertical" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-fr.html"><li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/emplois.html">Emplois et milieu de travail</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/immigration-citoyennete.html">Immigration et citoyenneté</a></li>
+				<li role="presentation"><a role="menuitem" href="https://voyage.gc.ca/">Voyage et tourisme</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/entreprises.html">Entreprises et industrie</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/prestations.html">Prestations</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/sante.html">Santé</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/impots.html">Impôts</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/environnement.html">Environnement et ressources naturelles</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/defense.html">Sécurité nationale et défense</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/culture.html">Culture, histoire et sport</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/police.html">Services de police, justice et urgences</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/transport.html">Transport et infrastructure</a></li>
+				<li role="presentation"><a role="menuitem" href="https://international.gc.ca/world-monde/index.aspx?lang=fra">Canada et le monde</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/finance.html">Argent et finances</a></li>
+				<li role="presentation"><a role="menuitem" href="https://www.canada.ca/fr/services/science.html">Science et innovation</a></li></ul>
+		</div>
+</nav>
+
+<nav id="wb-bc" property="breadcrumb">
+	<h2>Vous êtes ici :</h2>
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="https://www.canada.ca/en.html">Canada.ca</a></li>
+			<li><a href="https://www.rncan.gc.ca/accueil">Ressources naturelles Canada</a></li>
+			<li><a href="https://www.rncan.gc.ca/nos-ressources-naturelles/21439">Nos ressources naturelles</a></li>
+			<li><a href="https://www.rncan.gc.ca/nos-ressources-naturelles/mines-materiaux/10684">Minéraux et exploitation minière</a></li>
+			<li><abbr title="Loi sur les mesures de transparence dans le secteur extractif"><a href="https://www.rncan.gc.ca/nos-ressources-naturelles/mines-materiaux/lmtse/18183">LMTSE</a></abbr></li>
+		</ol>
+	</div>
+</nav>
+
+</header>
+
+<main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">
+<h1 id="wb-cont" property="name">Données ouvertes sur les paiements pétroliers, gaziers et miniers</h1>
+
+<div class="row">
+	<div class="col-xs-12">
+		<p>
+			Le <a href="https://laws-lois.justice.gc.ca/fra/lois/e-22.7/page-1.html">Extractif
+			La Loi sur les mesures de transparence sectorielle</a> aide le gouvernement du Canada à dissuader
+			corruption dans le secteur extractif. Entités extractives — pétrole, gaz et
+			les entreprises minières — qui sont actives au Canada doivent divulguer publiquement
+			certains types de paiements versés à des gouvernements au Canada et à l'étranger.
+		</p>
+	</div>
+</div>
+
+<div class="row" style="margin-top: 16px;">
+	<div class="col-sm-3">
+		<div class="indicator">
+			<img src="assets/earth.svg" alt=""/>
+			<p>
+				<span>Pays<span class="wb-inv">:</span></span>
+				<span>
+					<span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/summary.jsonfile#/estma_countries"></span>
+				</span>
+			</p>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="indicator">
+			<img src="assets/business.svg" alt=""/>
+			<p>
+				<span>Rapports<span class="wb-inv">:</span></span>
+				<span>
+					<span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/summary.jsonfile#/estma_reports_count"></span>
+				</span>
+			</p>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="indicator">
+			<img src="assets/receipt.svg" alt=""/>
+			<p>
+				<span>Bénéficiaires<span class="wb-inv">:</span></span>
+				<span>
+					<span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/summary.jsonfile#/estma_payees"></span>
+				</span>
+			</p>
+		</div>
+	</div>
+	<div class="col-sm-3">
+		<div class="indicator">
+			<img src="assets/money.svg" alt=""/>
+			<p>
+				<span>Total<span class="wb-inv">:</span></span>
+				<span>
+					<span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/summary.jsonfile#/estma_dollars">&nbsp;</span>
+				</span>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="row mrgn-tp-md">
+	<div class="col-md-6">
+		<h3>Paiements par cycle de rapport</h3>
+		<div id="chart-view" style="display: none;">
+			<select id="entities"></select>
+			<canvas id="chart" height="190" class="with-max-height" style="display: block; margin-top: 18px"></canvas>
+		</div>
+		<div id="chart-spinner" class="loading-spinner" role="status" style="margin-top: 42px; height: 180px">
+			<span class="sr-only">Chargement...</span>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h3>Tableau croisé dynamique en ligne</h3>
+		<div style="text-align: center;">
+			<a target="_blank" href="pivot.html" style="display: inline-block">
+				<img src="assets/pivot.png"
+					class="img-responsive thumbnail with-max-height"
+					style="margin-bottom: 0;"
+					alt="Pivot table"
+				/>
+			</a>
+			<div class="mrgn-tp-md">
+				<a class="btn btn-default" target="_blank" href="pivot.html">Ouvrir le tableau croisé dynamique</a>
+			</div>
+		</div>
+	</div>
+</div>
+<h1>Plus de façons d'explorer</h1>
+<div class="row">
+	<div class="col-sm-6">
+		<h2>Frappez les microdonnées</h2>
+		<ul>
+			<li>Afficher et filtrer toutes les données dans votre navigateur</li>
+			<li>Naviguer entre les différentes versions</li>
+			<li>Télécharger les résultats dans divers formats</li>
+		</ul>
+		<a class="btn btn-call-to-action" target=”_blank” href="https://flatgithub.com/StatCan/hackathon-ginyu-force-data?filename=estma-payments.csv">
+			Commencez à explorer
+		</a>
+	</div>
+	<div class="col-sm-6" style="text-align: center;">
+		<a target=”_blank” href="https://flatgithub.com/StatCan/hackathon-ginyu-force-data?filename=estma-payments.csv">
+			<img src="assets/flat-viewer.png"
+				class="img-responsive thumbnail with-max-height"
+				style="margin-top: 42px;"
+				alt="Data Preview"
+			/>
+		</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6 col-sm-push-6">
+		<h2>Améliorez votre analyse avec l'<abbr title="Espace de travail d'analyse avancée"><a href="https://analytics-platform.statcan.gc.ca/covid19/fr/analyses-avanc%C3%A9es">EAA</a></abbr >!</h2>
+		<ul>
+			<li>Utilisez des outils puissants pour créer de nouvelles informations</li>
+			<li>Travailler avec vos données en R, Python ou Julia</li>
+			<li>Commencez en quelques secondes avec Kubeflow</li>
+		</ul>
+		<a class="btn btn-call-to-action" target="_blank" href="https://analytics-platform.statcan.gc.ca/covid19/fr/analyses-avanc%C3%A9es">
+		Commencez à créer
+		</a>
+	</div>
+	<div class="col-sm-6 col-sm-pull-6" style="text-align: center;">
+		 <video class="img-responsive thumbnail with-max-height" style="margin-top: 42px;" controls loop muted>
+			<source src="assets/aaw.mp4" type="video/mp4">
+			<img src="assets/aaw.gif"
+				class="img-responsive thumbnail with-max-height"
+				style="margin-top: 42px;"
+				alt="Kubeflow on AAW"
+			/>
+		 </video>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-12">
+		<h2>Bloc-notes prêts à l'emploi</h2>
+	</div>
+</div>
+<div class="row wb-eqht">
+	<div class="col-sm-4">
+		<h3>Regroupement de mots et déduplication</h3>
+		<a target="_blank"
+			href="https://github.com/StatCan/hackathon-ginyu-force-data/blob/main/notebooks/Word_Embedding.ipynb"
+			style="display: inline-block;">
+			<img src="assets/word-cluster.png"
+				class="img-responsive thumbnail with-max-height mrgn-bttm-0"
+				style="padding: 0; border-width: 6px; background-color: #fff;"
+				alt="Jupyter Notebook (Julia)"
+			/>
+		</a>
+		<p>
+			Filtrer, regrouper et tracer les étiquettes <code>payee_project_name</code>, dans l'ordre
+			pour identifier la proximité ou les doublons. Plus de 700 doublons identifiés !
+			Écrit en Julia.
+		</p>
+	</div>
+	<div class="col-sm-4">
+		<h3>Regroupement par pays et&nbsp;entité</h3>
+		<div class="text-center">
+			<a target="_blank"
+				href="https://github.com/StatCan/hackathon-ginyu-force-data/blob/main/notebooks/estma-country-entity-groupby.ipynb"
+				style="display: inline-block;">
+				<img src="assets/jupyter-r-group-by.png"
+					class="img-responsive thumbnail with-max-height mrgn-bttm-0"
+					alt="Jupyter Notebook (R)"
+				/>
+			</a>
+		</div>
+		<p>
+			Analyse et trace la distribution de la contribution au paiement par
+			centile et identifie les entités qui effectuent la majorité des paiements.
+			Écrit en&nbsp;R.
+		</p>
+	</div>
+	<div class="col-sm-4">
+		<h3>Paiements par entité et catégorie</h3>
+		<section class="eqht-trgt">
+			<a target="_blank" href="https://github.com/StatCan/hackathon-ginyu-force-data/blob/main/notebooks/payments-per-reporting-cycle.ipynb" style="display: inline-block">
+				<img src="assets/jupyter-plotly.png"
+					class="img-responsive thumbnail with-max-height"
+					style="margin-bottom: 0;"
+					alt="Jupyter Notebook (Python)"
+				/>
+			</a>
+		</section>
+		<p>
+			Un tableau croisé dynamique dans Plotly pour examiner les montants et les types de paiements
+			les entités font chaque année. Utilise Pandas pour les trames de données. Écrit en Python.
+		</p>
+	</div>
+</div>
+
+
+
+<div class="row">
+	<div class="col-sm-12">
+		<h2>Données internationales (tiers)</h2>
+		<p>
+			<a href="https://resourceprojects.org/">Projets de ressources</a> est un
+			portail de données ouvertes publié par le Natural Resource Governance Institute.
+			Il fournit des informations sur les paiements effectués aux gouvernements par les entreprises
+			qui extraient du pétrole, du gaz et des ressources minérales dans le monde entier. Cette interactive
+			le site Web comprend la <abbr title="Loi sur les mesures de transparence dans le secteur extractif">LMTSE</abbr>
+			des données qui ont été agrégées avec des données générées par l'Union européenne
+			et Espace économique européen.
+		</p>
+		<div class="alert alert-info">
+			<h3>Une note sur les informations de tiers</h3>
+			<p>
+				Le gouvernement du Canada n'est pas responsable de l'exactitude,
+				la fiabilité ou l'actualité des informations fournies par des
+				sources. Le contenu fourni par des sources externes n'est pas soumis à des
+				les exigences en matière de langues, de confidentialité ou d'accessibilité.
+			</p>
+		</div>
+	</div>
+</div>
+
+
+<div class="pagedetails">
+	<div class="row">
+		<div class="col-sm-6 col-md-5 col-lg-4"><details class="brdr-0">
+					<summary class="btn btn-default text-center">Signaler un problème sur cette page</summary>
+					<div class="well row"><div class="gc-rprt-prblm">
+	<div class="gc-rprt-prblm-frm gc-rprt-prblm-tggl">
+		<form action="#">
+			<fieldset>
+				<legend><span class="field-name">Veuillez cocher toutes les réponses pertinentes&nbsp;:</span></legend>
+				<div class="checkbox">
+					<label for="gc-rprt-prblm-f1">
+						<input type="checkbox" name="problem1" value="Oui" id="gc-rprt-prblm-f1" />Un lien, un bouton ou une vidéo ne fonctionne pas
+					</label>
+					<input name="problem1" type="hidden" value="Non" />
+				</div>
+				<div class="checkbox">
+					<label for="gc-rprt-prblm-f2">
+						<input type="checkbox" name="problem2" value="Oui" id="gc-rprt-prblm-f2" />Il y a une erreur d'orthographe ou de grammaire
+					</label>
+					<input name="problem2" type="hidden" value="Non" />
+				</div>
+				<div class="checkbox">
+					<label for="gc-rprt-prblm-f3">
+						<input type="checkbox" name="problem3" value="Oui" id="gc-rprt-prblm-f3" />Les renseignements sont incomplets
+					</label>
+					<input name="problem3" type="hidden" value="Non" />
+				</div>
+				<div class="checkbox">
+					<label for="gc-rprt-prblm-f4">
+						<input type="checkbox" name="problem4" value="Oui" id="gc-rprt-prblm-f4" />L'information n'est plus à jour ou est erronée
+					</label>
+					<input name="problem4" type="hidden" value="Non" />
+				</div>
+				<div class="checkbox">
+					<label for="gc-rprt-prblm-f5">
+						<input type="checkbox" name="problem5" value="Oui" id="gc-rprt-prblm-f5" />Je n'arrive pas à trouver ce que je cherche
+					</label>
+					<input name="problem5" type="hidden" value="Non" />
+				</div>
+				<div class="checkbox">
+					<label for="gc-rprt-prblm-f6">
+						<input type="checkbox" name="problem6" value="Oui" id="gc-rprt-prblm-f6" />Autre problème qui ne figure pas sur cette liste
+					</label>
+					<input name="problem6" type="hidden" value="Non" />
+				</div>
+			</fieldset>
+			<button type="submit" class="btn btn-primary wb-toggle" data-toggle='{"stateOff": "hide", "stateOn": "show", "selector": ".gc-rprt-prblm-tggl"}'>Soumettre</button>
+		</form>
+	</div>
+	<div class="gc-rprt-prblm-thnk gc-rprt-prblm-tggl hide">
+		<h3>Merci de votre aide!</h3>
+		<p>Vous ne recevrez pas de réponse. Pour toute question, s’il vous plaît <a href="https://www.canada.ca/fr/contact.html">contactez-nous</a>.</p>
+	</div>
+</div>
+</div>
+			</details></div><div class="wb-share col-sm-4 col-md-3 col-sm-offset-2 col-md-offset-4 col-lg-offset-5" data-wb-share='{"lnkClass": "btn btn-default btn-block"}'></div></div>
+	<dl id="wb-dtmd">
+		<dt>Date de modification&#160;:</dt>
+		<dd><time property="dateModified"><span data-json-replacewith="https://raw.githubusercontent.com/StatCan/hackathon-ginyu-force-data/main/summary.jsonfile#/date"></span></time></dd>
+	</dl>
+</div>
+
+</main>
+
+<footer id="wb-info">
+
+	<div class="landscape">
+		<nav class="container wb-navcurr">
+			<h2 class="wb-inv">Au sujet du gouvernement</h2>
+			<ul class="list-unstyled colcount-sm-2 colcount-md-3"><li><a href="https://www.canada.ca/fr/contact.html">Contactez-nous</a></li>
+				<li><a href="https://www.canada.ca/fr/gouvernement/min.html">Ministères et organismes</a></li>
+				<li><a href="https://www.canada.ca/fr/gouvernement/fonctionpublique.html">Fonction publique et force militaire</a></li>
+				<li><a href="https://www.canada.ca/fr/nouvelles.html">Nouvelles</a></li>
+				<li><a href="https://www.canada.ca/fr/gouvernement/systeme/lois.html">Traités, lois et règlements</a></li>
+				<li><a href="https://www.canada.ca/fr/transparence/rapports.html">Rapports à l'échelle du gouvernement</a></li>
+				<li><a href="https://pm.gc.ca/fra">Premier ministre</a></li>
+				<li><a href="https://www.canada.ca/fr/gouvernement/systeme.html">Comment le gouvernement fonctionne</a></li>
+				<li><a href="https://ouvert.canada.ca/">Gouvernement ouvert</a></li></ul>
+		</nav>
+	</div>
+
+	<div class="brand">
+	<div class="container">
+		<div class="row ">
+			<nav class="col-md-9 col-lg-10 ftr-urlt-lnk">
+				<h2 class="wb-inv">À propos de ce site</h2>
+				<ul><li><a href="https://www.canada.ca/fr/sociaux.html">Médias sociaux</a></li>
+					<li><a href="https://www.canada.ca/fr/mobile.html">Applications mobiles</a></li>
+					<li><a href="https://www1.canada.ca/fr/nouveausite.html">À propos de Canada.ca</a></li>
+					<li><a href="https://www.canada.ca/fr/transparence/avis.html">Avis</a></li>
+					<li><a href="https://www.canada.ca/fr/transparence/confidentialite.html">Confidentialité</a></li></ul>
+			</nav>
+			<div class="col-xs-6 visible-sm visible-xs tofpg">
+				<a href="#wb-cont">Haut de la page <span class="glyphicon glyphicon-chevron-up"></span></a>
+			</div>
+			<div class="col-xs-6 col-md-3 col-lg-2 text-right">
+				<img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/wmms-blk.svg" alt="Symbole du gouvernement du Canada" />
+			</div>
+		</div>
+	</div>
+</div>
+</footer>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" crossorigin="anonymous"></script>
+<script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js"></script>
+<script src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/js/theme.min.js"></script>
+
+
+<!-- Chart function -->
+<script src="https://gmousse.github.io/dataframe-js/dist/dataframe.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"
+	integrity="sha256-bC3LCZCwKeehY6T4fFi9VfOU0gztUa+S4cnkIhVPZ5E="
+	crossorigin="anonymous"
+></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="site-js/entity-chart.js" type="module"></script>
+</body>
+</html>
